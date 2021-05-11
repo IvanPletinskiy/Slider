@@ -9,6 +9,7 @@
     height: 60px;
     width: 100%;
     position: absolute;
+    align-items: center;
     top: 0;
     z-index: 2;
 }
@@ -52,14 +53,6 @@
 .sign a:hover{
     color: #00a7ff; /* deepskyblue */
     border-color: #00a7ff; /* deepskyblue */
-}
-
-.header_logo {
-    font-size: 25px;
-    display: inline;
-    margin: 0 20px;
-    color: #01363d;
-    text-decoration: none;
 }
 
 .carousel__container {

@@ -1,22 +1,23 @@
 const sliderArr = document.querySelectorAll('.slide'),
     dotsBox = document.querySelector('.dotsbox'),
-    sliderContainer = document.querySelector(".slider__container");
+    sliderContainer = document.querySelector(".slider__container"),
+    switcher = document.getElementById("toggle-button");
 
 let currentSlide;
 let running;
-let timer = setInterval(autoslide, 7000);
+const slidePeriod = 2000;
+let timer = setInterval(autoslide, slidePeriod);
 let imgSize = document.querySelectorAll('.slide img')[0].clientWidth;
 init();
 
 function init() {
-    running = localStorage.getItem("running");
+    running = JSON.parse(localStorage.getItem('isRunning'))
     currentSlide = localStorage.getItem("slide");
     if (running == null) {
         console.log("running is null");
         running = true;
     } else {
-        console.log("running " + running);
-        running = false;
+        console.log("running loaded = " + running);
     }
     if (currentSlide == null) {
         console.log("slide is null");
@@ -24,12 +25,19 @@ function init() {
     } else {
         console.log("loaded slide = " + currentSlide);
     }
+    if(running === true){
+        switcher.checked = true;
+    }
+    switcher.addEventListener('change', function () {
+        running = !running;
+        switcher.checked = running;
+    })
 
     window.onbeforeunload = function (ev) {
         console.log("closing");
         // Store state before closing
         localStorage.clear();
-        localStorage.setItem("running", running);
+        localStorage.setItem("isRunning", running);
         localStorage.setItem("slide", currentSlide);
     };
     createDots();
@@ -60,7 +68,7 @@ function autoslide() {
 
 function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(autoslide, 7000);
+    timer = setInterval(autoslide, slidePeriod);
 }
 
 function slide(n) {
