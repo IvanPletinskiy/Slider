@@ -5,7 +5,7 @@ const sliderArr = document.querySelectorAll('.slide'),
 
 let currentSlide;
 let running;
-const slidePeriod = 2000;
+const slidePeriod = 8000;
 let timer = setInterval(autoslide, slidePeriod);
 let imgSize = document.querySelectorAll('.slide img')[0].clientWidth;
 init();
