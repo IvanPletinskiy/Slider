@@ -1,0 +1,19 @@
+.btn {
+  display: inline-flex;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: #017ef4;
+  opacity: .88;
+  transition: transform .5s,opacity .5s,-webkit-transform .5s;
+  color: #fff;
+  font-family: 'Zilla Slab',sans-serif;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: #ffffff;
+  border-radius: 50px;
+  border-color: #494949 !important;
+  transition: all 0.7s ease 0s;
+}
