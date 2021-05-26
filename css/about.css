@@ -1,0 +1,44 @@
+body{
+    background: white;
+}
+
+.box_container{
+    height: 655px;
+    margin: 0;
+    padding: 0;
+    background: url(../images/img2.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: sans-serif;
+    z-index: 1;
+}
+
+.box{
+    border-radius: 20px;
+    width: 700px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, .4);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.text{
+    width: 80%;
+    text-align: left;
+    font-size: 25px;
+    color: white;
+    margin: auto;
+    padding-top: 40px;
+    line-height: 1.7;
+}
